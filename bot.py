@@ -133,7 +133,8 @@ async def admin_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ===== Run =====
 def main():
-    app = ApplicationBuilder().token("8396797817:AAFRU1quWd7GjQZ69oPY7LzGl1GUpaWDEgQ").build()
+   import os
+ApplicationBuilder().token(os.getenv("8396797817:AAFRU1quWd7GjQZ69oPY7LzGl1GUpaWDEgQ")).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("admin", lambda u, c: u.message.reply_text(
@@ -148,3 +149,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
